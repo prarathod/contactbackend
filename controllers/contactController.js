@@ -46,3 +46,17 @@ module.exports = {
     deleteContact,
     getSingleContact
 };
+
+// module.exports = {
+//     getContact,
+//     createContact,
+//     updateContact,
+//     deleteContact,
+//     getSingleContact
+// };module.exports = {
+//     getContact,
+//     createContact,
+//     updateContact,
+//     deleteContact,
+//     getSingleContact
+// };
