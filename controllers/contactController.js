@@ -22,6 +22,10 @@ const getSingleContact = (req, res) => {
 
 const createContact = (req, res) => {
     console.log(`user input value is :- ${req.body.name}`);
+    const {name, age} = req.body;
+    if(!name || !age) {
+        throw new Error("All Fields are mandatory");
+    }
     res.status(201).json({meddage:"Contact created sucssefully"});
 }
 
