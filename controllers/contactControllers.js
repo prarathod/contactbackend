@@ -1,3 +1,4 @@
+const asyncHandler = require('express-async-handler');
 //@desc Get all Contacts
 //@route GET /api/contacts
 //@access public
@@ -8,16 +9,17 @@ const getAllContacts = (req, res) => {
 //@desc Post all Contacts
 //@route POST /api/contacts
 //@access public
-const createContacts = (req, res) => {
+const createContacts = asyncHandler((req, res) => {
     const {name, age, contact_num} = req.body;
 
     console.log(`user contact info:- ${name}, ${age}, ${contact_num}`);
     if(!name || !age || !contact_num){
         res.status(400);
-        throw new Error('All fields are mandotory');
+        throw new Error('All fields are mandotory !');
     }
     res.status(201).json({message:`Contact Created`});
-};
+    
+});
 
 //@desc Get all Contacts
 //@route GET /api/contacts/:id
