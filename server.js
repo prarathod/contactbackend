@@ -10,6 +10,7 @@ mongoose.set('strictQuery', true);
 
 app.use(express.json());
 app.use('/api/contacts', require("./routers/contactRouters"));
+app.use('/api/users', require("./routers/userRouter"));
 app.use(errorHandler);
 
 app.listen(port, ()=> {
